@@ -9,14 +9,8 @@ namespace Ledger.Provider.Services
     {
         public LedgerModel AddLedger(AddLedgerDto addLedgerDto)
         {
-            // creating a variable that holds where we have to set the value
-            var credit = false;
-
-            // checking whether we have to store it in credit or not
-            if (addLedgerDto.EntityRefType == EntityRefType.Purchase || addLedgerDto.EntityRefType == EntityRefType.Received)
-            {
-                credit = true;
-            }
+            // creating a variable that holds where we have to set the value either in debit or credit
+            var credit = IsCredit(addLedgerDto.EntityRefType);
 
             // creating a new ledger model
             var ledgerModel = new LedgerModel
@@ -98,6 +92,18 @@ namespace Ledger.Provider.Services
                 totalDebit += ledger.Debit != null ? Convert.ToInt32(ledger.Debit) : 0;
             }
             return totalDebit - totalCredit;
+        }
+        
+        private bool IsCredit(EntityRefType type)
+        {
+            switch (type)
+            {
+                case EntityRefType.Received:
+                case EntityRefType.Purchase:
+                        return true;
+                default:
+                    return false;
+            }
         }
         #endregion
     }
