@@ -9,11 +9,16 @@ namespace LedgerAPI.Provider.Services
     {
         public Ledger AddLedger(AddLedgerDto addLedgerDto)
         {
+            // creating a variable that holds where we have to set the value
             bool credit = false;
+
+            // checking whether we have to store it in credit or not
             if (addLedgerDto.EntityRefType == EntityRefType.Purchase || addLedgerDto.EntityRefType == EntityRefType.Received)
             {
                 credit = true;
             }
+
+            // creating a new ledger model
             var ledgerModel = new Ledger
             {
                 CreatedAt = DateTime.Now,
