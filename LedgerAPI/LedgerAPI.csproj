@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LegerAPI.Contract\LegerAPI.Contract.csproj" />
+    <ProjectReference Include="..\LegerAPI.Contract\LedgerAPI.Contract.csproj" />
   </ItemGroup>
 
 </Project>

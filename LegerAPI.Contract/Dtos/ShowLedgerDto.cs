@@ -1,4 +1,4 @@
-﻿namespace LegerAPI.Contract.Dtos
+﻿namespace LedgerAPI.Contract.Dtos
 {
     public class ShowLedgerDto
     {

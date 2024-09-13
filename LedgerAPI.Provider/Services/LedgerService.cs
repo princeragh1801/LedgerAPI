@@ -1,6 +1,7 @@
-﻿using LegerAPI.Contract.Dtos;
-using LegerAPI.Contract.Interfaces;
-using LegerAPI.Contract.Model;
+﻿using LedgerAPI.Contract.Interfaces;
+using LedgerAPI.Contract.Model;
+using static LedgerAPI.Contract.Enum.Enums;
+using LedgerAPI.Contract.Dtos;
 
 namespace LedgerAPI.Provider.Services
 {
@@ -8,7 +9,22 @@ namespace LedgerAPI.Provider.Services
     {
         public Ledger AddLedger(AddLedgerDto addLedgerDto)
         {
-            var ledgerModel = new Ledger();
+            bool credit = false;
+            if (addLedgerDto.EntityRefType == EntityRefType.Purchase || addLedgerDto.EntityRefType == EntityRefType.Received)
+            {
+                credit = true;
+            }
+            var ledgerModel = new Ledger
+            {
+                CreatedAt = DateTime.Now,
+                EntityRefType = addLedgerDto.EntityRefType,
+                EntityRefId = addLedgerDto.EntityRefId,
+                RefType = addLedgerDto.RefType,
+                RefId = addLedgerDto.RefId,
+                Particulars = $"By {addLedgerDto.EntityRefType.ToString()}",
+                Debit = credit ? null : addLedgerDto.Amount,
+                Credit = credit ? addLedgerDto.Amount : null,
+            };
             return ledgerModel;
         }
 

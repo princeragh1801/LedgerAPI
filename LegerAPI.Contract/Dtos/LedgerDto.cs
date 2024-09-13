@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static LegerAPI.Contract.Enum.Enums;
+﻿using static LedgerAPI.Contract.Enum.Enums;
 
-namespace LegerAPI.Contract.Dtos
+namespace LedgerAPI.Contract.Dtos
 {
     public class LedgerDto
     {

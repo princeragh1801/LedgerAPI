@@ -1,6 +1,6 @@
-﻿using static LegerAPI.Contract.Enum.Enums;
+﻿using static LedgerAPI.Contract.Enum.Enums;
 
-namespace LegerAPI.Contract.Model
+namespace LedgerAPI.Contract.Model
 {
     public class Ledger
     {

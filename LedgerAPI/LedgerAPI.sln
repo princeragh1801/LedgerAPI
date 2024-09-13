@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerAPI", "LedgerAPI.csproj", "{CF4CDABE-90C5-4D2D-951F-8EDE570EE6EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegerAPI.Contract", "..\LegerAPI.Contract\LegerAPI.Contract.csproj", "{6A9DC4F4-266F-4F66-B428-FF9330839543}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerAPI.Contract", "..\LegerAPI.Contract\LedgerAPI.Contract.csproj", "{6A9DC4F4-266F-4F66-B428-FF9330839543}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerAPI.Provider", "..\LedgerAPI.Provider\LedgerAPI.Provider.csproj", "{938BADF6-84A4-4F97-B602-647D2620F595}"
 EndProject

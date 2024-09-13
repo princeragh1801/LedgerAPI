@@ -1,4 +1,4 @@
-﻿namespace LegerAPI.Contract.Enum
+﻿namespace LedgerAPI.Contract.Enum
 {
     public class Enums
     {

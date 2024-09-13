@@ -1,7 +1,7 @@
-﻿using LegerAPI.Contract.Dtos;
-using LegerAPI.Contract.Model;
+﻿using LedgerAPI.Contract.Dtos;
+using LedgerAPI.Contract.Model;
 
-namespace LegerAPI.Contract.Interfaces
+namespace LedgerAPI.Contract.Interfaces
 {
     public interface ILedgerService
     {
