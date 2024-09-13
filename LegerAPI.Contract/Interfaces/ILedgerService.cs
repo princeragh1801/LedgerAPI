@@ -1,9 +1,12 @@
-﻿namespace LegerAPI.Contract.Interfaces
+﻿using LegerAPI.Contract.Dtos;
+using LegerAPI.Contract.Model;
+
+namespace LegerAPI.Contract.Interfaces
 {
     public interface ILedgerService
     {
-        public void AddLedger();
+        public Ledger AddLedger(AddLedgerDto addLedgerDto);
 
-        public void ShowLedger();
+        public ShowLedgerDto ShowLedger(List<LedgerDto> open, List<LedgerDto> close);
     }
 }
