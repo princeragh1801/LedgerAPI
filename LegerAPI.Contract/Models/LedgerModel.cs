@@ -1,8 +1,8 @@
-﻿using static LedgerAPI.Contract.Enum.Enums;
+﻿using Ledger.Contract.Enums;
 
-namespace LedgerAPI.Contract.Model
+namespace Ledger.Contract.Models
 {
-    public class Ledger
+    public class LedgerModel
     {
         public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -10,9 +10,9 @@ namespace LedgerAPI.Contract.Model
         public int EntityRefId { get; set; }
         public RefType RefType { get; set; }
         public int RefId { get; set; }
-        public decimal ? Debit { get; set; }
-        public decimal ? Credit { get; set; }
-        public string Particulars   { get; set; } = string.Empty;
+        public decimal? Debit { get; set; }
+        public decimal? Credit { get; set; }
+        public string Perticulars { get; set; } = string.Empty;
 
     }
 }

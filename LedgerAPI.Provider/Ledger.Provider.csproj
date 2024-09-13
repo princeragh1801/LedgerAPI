@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LedgerAPI\LedgerAPI.csproj" />
-    <ProjectReference Include="..\LegerAPI.Contract\LedgerAPI.Contract.csproj" />
+    <ProjectReference Include="..\LegerAPI.Contract\Ledger.Contract.csproj" />
   </ItemGroup>
 
 </Project>

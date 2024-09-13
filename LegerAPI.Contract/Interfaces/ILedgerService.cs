@@ -1,12 +1,12 @@
-﻿using LedgerAPI.Contract.Dtos;
-using LedgerAPI.Contract.Model;
+﻿using Ledger.Contract.Dtos;
+using Ledger.Contract.Models;
 
-namespace LedgerAPI.Contract.Interfaces
+namespace Ledger.Contract.Interfaces
 {
     public interface ILedgerService
     {
-        public Ledger AddLedger(AddLedgerDto addLedgerDto);
+        public LedgerModel AddLedger(AddLedgerDto addLedgerDto);
 
-        public ShowLedgerDto ShowLedger(List<LedgerDto> open, List<LedgerDto> close);
+        public EntryDto ShowLedger(List<LedgerDto> ledgers, decimal? previousDebit, decimal? previousCredit);
     }
 }

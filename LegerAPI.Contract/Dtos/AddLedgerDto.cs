@@ -1,6 +1,6 @@
-﻿using static LedgerAPI.Contract.Enum.Enums;
+﻿using Ledger.Contract.Enums;
 
-namespace LedgerAPI.Contract.Dtos
+namespace Ledger.Contract.Dtos
 {
     public class AddLedgerDto
     {
