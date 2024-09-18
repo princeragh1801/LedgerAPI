@@ -3,14 +3,20 @@ using Ledger.Contract.Enums;
 using Ledger.Contract.Interfaces;
 using Ledger.Contract.Models;
 
-namespace Ledger.Provider.Services
+namespace LedgerAPI.Provider.Services
 {
     public class LedgerService : ILedgerService
     {
         public LedgerModel AddLedger(AddLedgerDto addLedgerDto)
         {
-            // creating a variable that holds where we have to set the value either in debit or credit
-            var credit = IsCredit(addLedgerDto.EntityRefType);
+            // creating a variable that holds where we have to set the value
+            bool credit = false;
+
+            // checking whether we have to store it in credit or not
+            if (addLedgerDto.EntityRefType == EntityRefType.Purchase || addLedgerDto.EntityRefType == EntityRefType.Received)
+            {
+                credit = true;
+            }
 
             // creating a new ledger model
             var ledgerModel = new LedgerModel
@@ -26,11 +32,12 @@ namespace Ledger.Provider.Services
             };
             return ledgerModel;
         }
+
         public EntryDto ShowLedger(List<LedgerDto> ledgers, decimal? previousDebit, decimal? previousCredit)
         {
             var entry = new EntryDto();
             if (ledgers != null && ledgers.Count > 0)
-            { 
+            {
                 var ledgerDto = new LedgerDto
                 {
                     CreatedAt = ledgers.OrderBy(x => x.CreatedAt).Select(x => x.CreatedAt).FirstOrDefault().Value.AddDays(-1),
@@ -80,7 +87,6 @@ namespace Ledger.Provider.Services
             }
             return entry;
         }
-
         #region Helpers
         private decimal GetDifference(List<LedgerDto> ledgerList)
         {
@@ -93,19 +99,21 @@ namespace Ledger.Provider.Services
             }
             return totalDebit - totalCredit;
         }
-        
+
         private bool IsCredit(EntityRefType type)
         {
             switch (type)
             {
                 case EntityRefType.Received:
                 case EntityRefType.Purchase:
-                        return true;
+                    return true;
                 default:
                     return false;
             }
         }
         #endregion
+
+
     }
 }
   
