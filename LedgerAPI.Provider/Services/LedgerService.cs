@@ -30,7 +30,7 @@ namespace Ledger.Provider.Services
         {
             var entry = new EntryDto();
             if (ledgers != null && ledgers.Count > 0)
-            {
+            { 
                 var ledgerDto = new LedgerDto
                 {
                     CreatedAt = ledgers.OrderBy(x => x.CreatedAt).Select(x => x.CreatedAt).FirstOrDefault().Value.AddDays(-1),
